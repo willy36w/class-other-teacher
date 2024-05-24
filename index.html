@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid System</title>
+    <!-- 引入 bootstrap 的 css 檔案 -->
+    <!-- 該 css 檔案是使用在元件，常用的 css 樣式外觀 -->
+    <link rel="stylesheet" href="./css/bootstrap.css">
+    <!-- Bootstrp Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        #justify-content .row {
+            height: 50px;
+            background: lightgoldenrodyellow;
+            margin-bottom: 20px;
+        }
+
+        #justify-content .row :nth-child(odd) {
+            background: lightgreen;
+        }
+
+        #justify-content .row :nth-child(even) {
+            background: lightblue;
+        }
+
+        #test {
+            text-align: center;
+            color: white;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Bookstrp 斷點</h1>
+    <p>分為 0(xs 不用寫)、576(sm)、768(md)、992(lg)、1200(xl)、1400(xxl) 這6種。</p>
+
+
+    <h1>容器分為兩種</h1>
+    <p>固定容器式響應式的，可以隨著斷點去寬度。</p>
+    <p>滿版容器永遠維 100% 的寬度</p>
+    <div class="container bg-primary text-white">固定容器 .container</div>
+    <div class="container-fluid bg-info text-white">滿版容器 .container-fluid</div>
+
+    <hr>
+
+    <div class="container">
+        <h1>網格系統</h1>
+        <p>.row 一列 ，.col 一個欄位</p>
+        <div class="row">
+            <div class="col bg-danger text-white">
+                Column
+            </div>
+            <div class="col bg-success text-white">
+                Column
+            </div>
+            <div class="col bg-warning text-white">
+                Column
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <p>bookstrp 是12欄位(等份)的網格系統 ， .col-6 指使用了6等份 ， 剩下6等份的空間。可以用.col去均分。</p>
+        <div class="row">
+            <div class="col bg-danger text-white">
+                1 of 3
+            </div>
+            <div class="col-6 bg-success text-white">
+                2 of 3 (wider)
+            </div>
+            <div class="col bg-warning text-white">
+                3 of 3
+            </div>
+        </div>
+        <p>使用了5等分，剩下7等份無法使用 .col-3.5的方式去均分(沒有這個 class)，只能用.col 均分。</p>
+        <div class="row">
+            <div class="col bg-danger text-white">
+                1 of 3
+            </div>
+            <div class="col-5 bg-success text-white">
+                2 of 3 (wider)
+            </div>
+            <div class="col bg-warning text-white">
+                3 of 3
+            </div>
+        </div>
+    </div>
+
+
+    <div class="container">
+        <h1>可變寬度內容</h1>
+        <p>auto 指的是內容的寬度，範例是文字 Variable width content 的寬度</p>
+        <div class="row justify-content-lg-center">
+            <div class="col-lg-2 bg-primary text-white">
+                1 of 3
+            </div>
+            <div class="col-lg-auto bg-info text-white">
+                Variable width content
+            </div>
+            <div class="col-lg-2 bg-primary text-white">
+                3 of 3
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col bg-primary text-white">
+                1 of 3
+            </div>
+            <div class="col-md-auto bg-info text-white">
+                Variable width content
+            </div>
+            <div class="col col-lg-2 bg-success text-white">
+                3 of 3
+            </div>
+        </div>
+        <br>
+    </div>
+    <br>
+    <div class="container">
+        <h1>範例:</h1>
+        <!-- xs 以上都是一欄 -->
+        <div class="row">
+            <div class="col-12 bg-primary text-white">.col-12</div>
+            <div class="col-12 bg-info text-white">.col-12</div>
+        </div>
+        <br>
+        <!-- md 以上都是二欄 -->
+        <div class="row">
+            <div class="col-md-6 bg-danger text-white">.col-6</div>
+            <div class="col-md-6 bg-primary text-white">.col-6</div>
+            <div class="col-md-6 bg-info text-white">.col-6</div>
+        </div>
+        <br>
+        <!-- xl 以上都是三欄 -->
+        <div class="row">
+            <div class="col-xl-4 bg-danger text-white">.col-xl-4</div>
+            <div class="col-xl-4 bg-primary text-white">.col-xl-4</div>
+            <div class="col-xl-4 bg-info text-white">.col-xl-4</div>
+            <div class="col-xl-4 bg-info text-white">.col-xl-4</div>
+        </div>
+        <br>
+
+        <div class="row">
+            <div class="col-12 col-md-6 col-xl-4 bg-primary">
+                <div class="card">
+                    <img src="https://picsum.photos/400/200/?random=10" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 bg-info">
+                <div class="card">
+                    <img src="https://picsum.photos/id/1020/800/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 bg-danger">
+                <div class="card">
+                    <img src="https://picsum.photos/id/237/800/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 bg-primary">
+                <div class="card">
+                    <img src="https://picsum.photos/id/1025/800/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 bg-info">
+                <div class="card">
+                    <img src="https://picsum.photos/id/1076/800/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-6 col-xl-4 bg-danger">
+                <div class="card">
+                    <img src="https://picsum.photos/id/684/800/400" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <h5 class="card-title">Card title</h5>
+                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                            the card's content.</p>
+                        <a href="#" class="btn btn-primary">Go somewhere</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+
+        <!-- 第一個欄位，在 xs 尺寸會呈現1個欄位(一般 div)，在 md 尺寸呈現8等份 -->
+        <!-- 第二個欄位，在 xs 尺寸會呈現 6 等份(一半的空間)，在 md 尺寸呈現4等份-->
+        <div class="row">
+            <div class="col-md-8 bg-primary text-white">.col-md-8</div>
+            <div class="col-6 col-md-4 bg-success text-white">.col-6 .col-md-4</div>
+        </div>
+
+        <!-- 在 xs 尺寸開始，呈現2欄，然後在 md 尺寸開始，呈現3欄 -->
+        <div class="row">
+            <div class="col-6 col-md-4 text-white">.col-6 .col-md-4</div>
+            <div class="col-6 col-md-4 text-white">.col-6 .col-md-4</div>
+            <div class="col-6 col-md-4 text-white">.col-6 .col-md-4</div>
+        </div>
+
+        <!-- 在 xs 尺寸開始，呈現2欄都是6等份 = 均分 -->
+        <div class="row">
+            <div class="col-6 text-white">.col-6</div>
+            <div class="col-6 text-white">.col-6</div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h1>換行</h1>
+        <p>bookstrap 是 12 欄位網格，如果欄位等份超過 12 會換行</p>
+        <div class="row bg-dark">
+            <div class="col-4 bg-primary text-white">col-4</div>
+            <div class="col-7 bg-success text-white">col-7</div>
+            <!-- 第三個欄位會換行 -->
+            <div class="col-2 bg-info text-white">col-2</div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h1>列與欄</h1>
+        <div class="row row-cols-2 row-cols-sm-2 row-cols-md-4">
+            <div class="col bg-dark text-white">Column</div>
+            <div class="col bg-dark text-white">Column</div>
+            <div class="col bg-dark text-white">Column</div>
+            <div class="col bg-dark text-white">Column</div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h1>垂直對齊</h1>
+        <div class="row align-items-start bg-dark text-white" style="height: 300px;">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+        <br>
+        <div class="row align-items-center bg-dark text-white" style="height: 300px;">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+        <br>
+        <div class="row align-items-end bg-dark text-white" style="height: 300px;">
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+            <div class="col">
+                One of three columns
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="justify-content" class="container">
+        <h1>水平對齊</h1>
+        <div class="row justify-content-start">
+            <div class="col-4">
+                One of two columns
+            </div>
+            <div class="col-4">
+                One of two columns
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-4">
+                One of two columns
+            </div>
+            <div class="col-4">
+                One of two columns
+            </div>
+        </div>
+        <div class="row justify-content-end">
+            <div class="col-4">
+                One of two columns
+            </div>
+            <div class="col-4">
+                One of two columns
+            </div>
+        </div>
+        <div class="row justify-content-around bg-dark text-white">
+            <div class="col-4">
+                One of two columns
+            </div>
+            <div class="col-4">
+                One of two columns
+            </div>
+        </div>
+        <div class="row justify-content-between bg-dark text-white">
+            <div class="col-4">
+                One of two columns
+            </div>
+            <div class="col-4">
+                One of two columns
+            </div>
+        </div>
+        <div class="row justify-content-evenly bg-dark text-white">
+            <div class="col-4">
+                One of two columns
+            </div>
+            <div class="col-4">
+                One of two columns
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h1>Column breaks</h1>
+        <div class="row bg-dark">
+            <div class="col-6 col-sm-3 bg-info text-white">.col-6 .col-sm-3</div>
+            <div class="col-6 col-sm-3 bg-success text-white">.col-6 .col-sm-3</div>
+
+            <!-- Force next columns to break to new line -->
+            <div class="w-100"></div>
+
+            <div class="col-6 col-sm-3 bg-info text-white">.col-6 .col-sm-3</div>
+            <div class="col-6 col-sm-3 bg-success text-white">.col-6 .col-sm-3</div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <div class="row bg-dark">
+            <div class="col-6 col-sm-4 bg-info text-white">.col-6 .col-sm-4</div>
+            <div class="col-6 col-sm-4 bg-success text-white">.col-6 .col-sm-4</div>
+
+            <!-- Force next columns to break to new line at md breakpoint and up -->
+            <div class="w-100 d-none d-md-block text-white"></div>
+
+            <div class="col-6 col-sm-4 bg-info text-white">.col-6 .col-sm-4</div>
+            <div class="col-6 col-sm-4 bg-success text-white">.col-6 .col-sm-4</div>
+        </div>
+    </div>
+
+    <br>
+    <!-- 練習1 => Logo在左，選單在右 -->
+
+    <!-- 練習2 => xs 1欄，md 2欄，lg 3欄，xL第一個欄位內容寬度，其餘兩欄平均分配 -->
+    <div id="test" class="container">
+        <h1>練習1</h1>
+        <div class="row justify-content-evenly bg-dark">
+            <div class="col-6 bg-danger">Clean Blog</div>
+            <div class="col-1 bg-info">HOME</div>
+            <div class="col-1 bg-success">ABOUT</div>
+            <div class="col-1 bg-danger">POSTS</div>
+            <div class="col-1 bg-info">CONTACT</div>
+        </div>
+    </div>
+
+    <br>
+
+    <div id="test" class="container">
+        <h1>練習2</h1>
+        <div class="row justify-content-xl-between row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+            <div class="col bg-danger">bg-danger</div>
+            <div class="col bg-info">bg-info</div>
+            <div class="col bg-success">bg-success</div>
+            <div class="col bg-dark">bg-dark</div>
+        </div>
+    </div>
+
+    <br>
+    <div class="container">
+        <h1>Justify-content 分配空間</h1>
+        <div class="row justify-content-lg-between">
+            <div class="col-lg-auto">
+                <nav class="nav">
+                    <a class="nav-link" href="#">Clean Blog</a>
+                </nav>
+            </div>
+            <div class="col-lg-auto">
+                <nav class="nav">
+                    <a class="nav-link" href="#">HOME</a>
+                    <a class="nav-link" href="#">ABOUT</a>
+                    <a class="nav-link" href="#">POSTS</a>
+                    <a class="nav-link" href="#">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+    <div class="container">
+        <h1>Margin 可以推擠空間</h1>
+        <div class="row">
+            <div class="col-lg-auto me-auto">
+                <nav class="nav">
+                    <a class="nav-link" href="#">Clean Blog</a>
+                </nav>
+            </div>
+            <div class="col-lg-auto">
+                <nav class="nav">
+                    <a class="nav-link" href="#">HOME</a>
+                    <a class="nav-link" href="#">ABOUT</a>
+                    <a class="nav-link" href="#">POSTS</a>
+                    <a class="nav-link" href="#">CONTACT</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <br>
+
+
+    <!-- 引入 bootstrap 的 js 檔案 -->
+    <!-- 該 js 檔案是使用在元件的互動功能 -->
+    <script src="./js/bootstrap.bundle.js"></script>
+</body>
+
+</html>
